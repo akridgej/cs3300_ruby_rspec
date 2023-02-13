@@ -3,11 +3,17 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  
+  # Sum the array
+  arr.sum
+
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  
+  max = arr.max(2)
+  arr.sum(max.values_at(0,1))
+
 end
 
 def sum_to_n? arr, n
