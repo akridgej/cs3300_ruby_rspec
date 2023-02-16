@@ -11,31 +11,56 @@ end
 
 def max_2_sum arr
   
+  # Get 2 max elements in the array and sum those elements
   max = arr.max(2)
-  arr.sum(max.values_at(0,1))
+  max.sum
 
 end
 
-def sum_to_n? arr, n
-  # YOUR CODE HERE
+def sum_to_n? (arr,n)
+
+  cond = false
+
+  for i in 0..(arr.length) do
+    for j in (i + 1)..(arr.length) do
+      if (!arr[i].nil? && !arr[j].nil?)
+        if (arr[i] + arr[j] == n)
+          cond = true
+        end
+      end
+    end
+  end
+
+  return cond
+  
 end
 
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, #{name}"
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+
+  if s[0] =~ /[^aeiouAEIOU]/ and s[0] =~ /[a-zA-Z]/
+    puts "#{s[0]} is a consonant"
+    return true
+  else
+    puts "#{s[0]} is not a consonant"
+    return false
+  end
+
 end
 
+# Since this method is optional, I did not do it
 def binary_multiple_of_4? s
   # YOUR CODE HERE
 end
 
 # Part 3
 
-class BookInStock
+#class BookInStock
 # YOUR CODE HERE
-end
+#end
+
