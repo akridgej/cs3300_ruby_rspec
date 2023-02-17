@@ -60,7 +60,28 @@ end
 
 # Part 3
 
-#class BookInStock
-# YOUR CODE HERE
-#end
+class BookInStock
+
+  # The attribute accessor allows the attributes to be changed
+  attr_accessor :isbn
+  attr_accessor :price
+
+  def initialize(isbn, price)
+
+    if isbn == '' or price <= 0
+        begin
+          raise ArgumentError
+        end
+    else
+      @isbn = isbn
+      @price = price
+    end
+
+  end
+
+  def price_as_string
+    return "$#{price.round(2)}"
+  end
+
+end
 
