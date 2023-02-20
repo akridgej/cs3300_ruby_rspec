@@ -2,16 +2,32 @@
 
 require_relative '../lib/ruby_intro'
 describe 'Ruby intro Part 1' do
+
+  # Test sum method
   describe '#sum' do
 
+    # Test if it returns correct sum
     it 'returns correct sum [1 point]', points: 1 do
+      # Test if the result is an integer (expect it to be an integer)
       expect(sum([1, 2, 3, 4, 5])).to be_a_kind_of Integer
+
+      # Test if the result = 15
       expect(sum([1, 2, 3, 4, 5])).to eq(15)
+
+      # Test if the result = 5
       expect(sum([1, 2, 3, 4, -5])).to eq(5)
+
+      # Test if the result = -90
       expect(sum([1, 2, 3, 4, -5, 5, -100])).to eq(-90)
     end
+
+    # Test if the method works on empty arrays
     it 'works on the empty array [2 points]', points: 2 do
+
+      # Test if the method does not raise an error when an empty array is passed
       expect { sum([]) }.not_to raise_error
+
+      # Test if the method returns 0 on an empty array
       expect(sum([])).to be_zero
     end
 
